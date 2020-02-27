@@ -65,25 +65,33 @@ for (var i = 0; i < dotsToScroll.length; i++) {
 
 /*----------  Auto dot change  ----------*/
 
-let sections = document.querySelectorAll('.section'),
-		navigationDots = document.querySelectorAll('.hero--dots a');
+// let sections = document.querySelectorAll('.section'),
+// 		navigationDots = document.querySelectorAll('.hero--dots a');
 
-updateNavigation();
-window.addEventListener('scroll', () => updateNavigation());
+// updateNavigation();
+// window.addEventListener('scroll', () => updateNavigation());
 
-function updateNavigation() {
-	sections.forEach(el => {
-		let navDot = document.querySelector('.hero--dots a[href="#' + el.getAttribute('id') + '"]'),
-				activeSection = navDot.dataset.number - 1;
+// function updateNavigation() {
+// 	sections.forEach(el => {
+// 		let navDot = document.querySelector('.hero--dots a[href="#' + el.getAttribute('id') + '"]'),
+// 				activeSection = navDot.dataset.number - 1;
 
-		if ( ( el.offsetTop - el.offsetHeight / 2 < window.pageYOffset ) && ( el.offsetTop + el.offsetHeight / 2 > window.pageYOffset ) ) {
-			navigationDots[activeSection].classList.add('active');
-			// console.log('TRUE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
-		} else {
-			  navigationDots[activeSection].classList.remove('active');
-			  // console.log('FALSE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
-		}
-	});
+// 		if ( el.offsetTop < window.pageYOffset + el.offsetHeight / 2 ) {
+// 			navigationDots[activeSection].classList.add('active');
+// 			// console.log('TRUE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
+// 		} else {
+// 			  navigationDots[activeSection].classList.remove('active');
+// 			  // console.log('FALSE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
+// 		}
+// 	});
 
-	// console.log('');
-}
+// 	console.log('');
+
+// 	// ( el.offsetTop - el.offsetHeight / 2 < window.pageYOffset ) && ( el.offsetTop + el.offsetHeight / 2 > window.pageYOffset )
+// }
+
+// easyScrollDots({
+//   'fixedNav': false,
+//   'fixedNavId': '',
+//   'fixedNavUpward': false
+// });

@@ -3,20 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="shortcut icon" href="images/" type="image/png"> -->
 	<title>Plae shoes</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+	<!-- <div>
+	  <div class="scroll-indicator" id="section01" data-scroll-indicator-title="First Section"></div>
+	</div> -->
+
 	<div class="hero section" id="hero">
-		<div class="logo--wrap">
-			<a href="/">
-				<picture>
-				  <source data-srcset="images/logo.webp" type="image/webp">
-				  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="images/logo.png" alt="Plae shoes" class="lazyload">
-				</picture>
-			</a>
-		</div>
+		<a href="/" class="logo--wrap">
+			<picture>
+			  <source data-srcset="images/logo.webp" type="image/webp">
+			  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="images/logo.png" alt="Plae shoes" class="lazyload">
+			</picture>
+		</a>
 
 		<div class="hero--content">
 			<h1>Coming Soon</h1>
@@ -36,7 +39,10 @@
 			<a href="#footer" data-number="6"></a>
 		</div>
 	</div>
-
+  
+  <!-- <div>
+    <div class="scroll-indicator" id="section02" data-scroll-indicator-title="Another Section"></div>
+  </div> -->
 
 	<div class="image-with-text reverse section" id="image-with-text">
 		<picture>
@@ -82,6 +88,9 @@
 		</div>
 	</div>
 
+	<!-- <div>
+	  <div class="scroll-indicator" id="section03" data-scroll-indicator-title="Hello World"></div>
+	</div> -->
 
 	<div class="featured-products section" id="featured-products">
 		<h2 class="featured-products--title">The Range</h2>
@@ -154,7 +163,70 @@
 
 	
 	<div class="product-review section" id="product-review">
-		
+		<h2 class="product-review--title">Why Plae?</h2>
+		<p class="product-review--subtitle">Some of the features that make Plae shoes so good for kids</p>
+
+		<div class="product-review--container">
+			<div class="product-review--img-wrap">
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+				<span hidden></span>
+
+				<picture class="product-review--picture">
+					<source data-srcset="images/product-review.webp" type="image/webp">
+					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="images/product-review.jpg" alt="" class="product-review--img lazyload">
+				</picture>
+			</div>
+
+			<div class="product-review--column first">
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Pull Tab</h4>
+					<p class="product-review--column-item-description">makes it easy for little hands and fingers to get their shoes on.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Shock Absorption</h4>
+					<p class="product-review--column-item-description">removable ECO-ORTHOLITE® anti-microbial, anti-bacterial insole, made from castor beans, provides superior protection with renewable resources.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Custom Fit & Style</h4>
+					<p class="product-review--column-item-description">interchangeable tabs come in S,M,L,XL sizes to accommodate instep widths and allows kids to make it their own with different color, material and print options. Plae shoes also have the ability to fit AFO orthotic braces.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Eco-Friendly</h4>
+					<p class="product-review--column-item-description">made in a solar powered, fair labour factory using recycled milk jugs (PET), ISO certified leathers, and water-based glues. </p>
+				</div>
+			</div>
+
+			<div class="product-review--column second">
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Machine Washable*</h4>
+					<p class="product-review--column-item-description">for when kids get dirty.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Anatomical Form</h4>
+					<p class="product-review--column-item-description">specially engineered sole follows the natural contour of a child’s foot - which is mostly cartilage.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Flexible Sole</h4>
+					<p class="product-review--column-item-description">promotes natural movement by allowing for a free range of movement.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Passive Traction</h4>
+					<p class="product-review--column-item-description">promotes natural movement by providing grip on loose earth without compromising contact on hard surfaces.</p>
+				</div>
+				<div class="product-review--column-item">
+					<h4 class="product-review--column-item-title">Toe Guard</h4>
+					<p class="product-review--column-item-description">protects both the foot and shoe from toe drag.</p>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 
@@ -279,6 +351,7 @@
 	</footer>
 
 	<script src="js/lazysizes.min.js" async></script>
+	<script src="js/easyScrollDots.min.js" defer></script>
 	<script src="js/glide.min.js" defer></script>
 	<script src="js/script.js" defer></script>
 </body>
