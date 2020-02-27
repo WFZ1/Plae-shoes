@@ -1,0 +1,23 @@
+{
+  "name": "Plae Shoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel Skumenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@glidejs/glide": "^3.4.1",
+    "fg-loadcss": "^2.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "lazysizes": "^5.2.0",
+    "node-sass": "^4.13.1"
+  }
+}
