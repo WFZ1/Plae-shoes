@@ -3,46 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="shortcut icon" href="images/" type="image/png"> -->
 	<title>Plae shoes</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	
+	<div class="dots" hidden>
+		<a href="#hero" data-number="1"></a>
+		<a href="#image-with-text" data-number="2"></a>
+		<a href="#featured-products" data-number="3"></a>
+		<a href="#product-review" data-number="4"></a>
+		<a href="#contacts" data-number="5"></a>
+		<a href="#footer" data-number="6"></a>
+	</div>
 
-	<!-- <div>
-	  <div class="scroll-indicator" id="section01" data-scroll-indicator-title="First Section"></div>
-	</div> -->
 
 	<div class="hero section" id="hero">
-		<a href="/" class="logo--wrap">
+		<a href="/" class="logo">
 			<picture>
 			  <source data-srcset="images/logo.webp" type="image/webp">
 			  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="images/logo.png" alt="Plae shoes" class="lazyload">
 			</picture>
 		</a>
 
-		<div class="hero--content">
+		<div class="content">
 			<h1>Coming Soon</h1>
-			<p>goplae.co.uk is coming soon but in the meantime check out this page  and sign up to our newsletter for more information</p>
+			<p class="subtitle">goplae.co.uk is coming soon but in the meantime check out this page  and sign up to our newsletter for more information</p>
 			<form method="post" class="form--sign-up">
 				<input type="text" name="email" placeholder="Enter email address">
 				<input type="submit" value="Sign Up">
 			</form>
 		</div>
-
-		<div class="hero--dots" hidden>
-			<a href="#hero" data-number="1"></a>
-			<a href="#image-with-text" data-number="2"></a>
-			<a href="#featured-products" data-number="3"></a>
-			<a href="#product-review" data-number="4"></a>
-			<a href="#contacts" data-number="5"></a>
-			<a href="#footer" data-number="6"></a>
-		</div>
 	</div>
-  
-  <!-- <div>
-    <div class="scroll-indicator" id="section02" data-scroll-indicator-title="Another Section"></div>
-  </div> -->
 
 	<div class="image-with-text reverse section" id="image-with-text">
 		<picture>
@@ -51,7 +43,7 @@
 		</picture>
 
 		<div class="image-with-text--block">
-			<h2 class="image-with-text--title">About Plae</h2>
+			<h2 class="image-with-text--title title">About Plae</h2>
 			<div class="image-with-text--description">
 				<p>Previously a Designer for Puma and Adidas, Head Designer Ryan Ringholz has started a new revolution in kids trainers. Using technology usually reserved for elite athletes, Plae creates shoes designed especially for a child’s foot.</p>
 				<p>Because kids feet are always growing, their shoes should accommodate leaving the cartilage and fledgling bone room to grow its own way. The interchangeable tabs adjust to accommodate thinner, wider or thicker feet and nearly all Plae shoes can fit an AFO orthotic brace.</p>
@@ -69,7 +61,7 @@
 		</picture>
 		
 		<div class="image-with-text--block">
-			<h2 class="image-with-text--title">What our customers say</h2>
+			<h2 class="image-with-text--title title">What our customers say</h2>
 			<p class="image-with-text--description quotes">I like them because they are very comfy and soft inside. They are really light which means I run faster. I like the cool straps that I can change</p>
 			<span class="image-with-text--subtext">Charlie (age 8)</span>
 		</div>
@@ -88,13 +80,10 @@
 		</div>
 	</div>
 
-	<!-- <div>
-	  <div class="scroll-indicator" id="section03" data-scroll-indicator-title="Hello World"></div>
-	</div> -->
 
 	<div class="featured-products section" id="featured-products">
-		<h2 class="featured-products--title">The Range</h2>
-		<p class="featured-products--subtitle">View the styles available now from select stockists</p>
+		<h2 class="featured-products--title title">The Range</h2>
+		<p class="featured-products--subtitle subtitle">View the styles available now from select stockists</p>
 
 		<div class="glide featured-products--container">
 		  <div class="glide__track" data-glide-el="track">
@@ -158,13 +147,13 @@
 		  </div>
 		</div>
 
-		<div class="featured-products--number"><span>1</span> / 7</div>
+		<div class="featured-products--number subtitle"><span>1</span> / 7</div>
 	</div>
 
 	
 	<div class="product-review section" id="product-review">
-		<h2 class="product-review--title">Why Plae?</h2>
-		<p class="product-review--subtitle">Some of the features that make Plae shoes so good for kids</p>
+		<h2 class="product-review--title title">Why Plae?</h2>
+		<p class="product-review--subtitle subtitle">Some of the features that make Plae shoes so good for kids</p>
 
 		<div class="product-review--container">
 			<div class="product-review--img-wrap">
@@ -179,8 +168,14 @@
 				<span hidden></span>
 
 				<picture class="product-review--picture">
+					<!-- <source data-srcset="images/product-review@2x.webp" type="image/webp" media="(min-width: 1200px)"> -->
 					<source data-srcset="images/product-review.webp" type="image/webp">
-					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-srcset="images/product-review.jpg" alt="" class="product-review--img lazyload">
+					<img class="product-review--img lazyload" alt=""
+							 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+							 data-srcset="images/product-review.jpg w698,
+											 			images/product-review@2x.jpg w1160" 
+							 sizes="(min-width: 1200px) 1160px,
+								 			300px">
 				</picture>
 			</div>
 
@@ -231,104 +226,104 @@
 
 
 	<div class="contacts section" id="contacts">
-		<h2 class="contacts--title">Where can you find us?</h2>
-		<p class="contacts--subtitle">See below our UK stockist list</p>
+		<h2 class="contacts--title title">Where can you find us?</h2>
+		<p class="contacts--subtitle subtitle">See below our UK stockist list</p>
 
 		<div class="contacts--grid">
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 
 			<p class="contacts--item">
 				<b class="contacts--item-title">Best Foot Forward</b>
 				76 Liverpool Road <br>Preston <br>PR1 0QD <br>0208 969 7565
-				<a href="mailto:bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
+				<a href="http://www.bestfootforward.co.uk" class="contacts--item-link">bestfootforward.co.uk</a>
 			</p>
 		</div>
 
 		<div class="contacts--info">
-			<h3 class="contacts--info-title">Like to stock Plae?</h3>
-			<p class="contacts--info-subtitle">Call or email us to send an enquiry</p>
+			<h3 class="contacts--info-title title">Like to stock Plae?</h3>
+			<p class="contacts--info-subtitle subtitle">Call or email us to send an enquiry</p>
 			<div class="contacts--info-row">
 				<a href="mailto:bestfootforward.co.uk" class="contacts--info-link">hello@goplae.co.uk</a>
 				<a href="tel:07947301292" class="contacts--info-tel">07947 301292</a>
@@ -339,8 +334,8 @@
 
 	<footer class="footer section" id="footer">
 		<div class="footer--content">
-			<h2>Be the first to see goplae.co.uk</h2>
-			<p>Sign Up for the latest news</p>
+			<h2 class="title">Be the first to see goplae.co.uk</h2>
+			<p class="subtitle">Sign Up for the latest news</p>
 			<form action="#" method="post" class="form--sign-up">
 				<input type="text" name="email" placeholder="Enter email address">
 				<input type="submit" value="Sign Up">
@@ -350,8 +345,10 @@
 		<p class="copyright">Copyright &copy; 2015 Craftymothers ltd. All Rights Reserved</p>
 	</footer>
 
+	<script>
+		window.lazySizesConfig = { loadMode: 1 };
+	</script>
 	<script src="js/lazysizes.min.js" async></script>
-	<script src="js/easyScrollDots.min.js" defer></script>
 	<script src="js/glide.min.js" defer></script>
 	<script src="js/script.js" defer></script>
 </body>
