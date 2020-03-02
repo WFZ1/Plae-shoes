@@ -2,18 +2,13 @@
 /* Featured products
 =============================================*/
 
-const glideCarousel = new Glide('.featured-products--container');
+const glideCarousel = new Glide('.featured-products .container', {
+  type: 'carousel'
+}).mount();
 
 // Change number active slide on Carousel change
-let numberActiveSlide = document.querySelector('.featured-products--number span');
+let numberActiveSlide = document.querySelector('.featured-products .number span');
 glideCarousel.on(['run'], () => numberActiveSlide.innerHTML = glideCarousel.index + 1 );
-
-// Mount!
-setTimeout(() => {
-  glideCarousel.mount({
-    type: 'carousel'
-  });
-}, 500);
 
 /* Scroll
 =============================================*/
