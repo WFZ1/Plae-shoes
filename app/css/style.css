@@ -235,9 +235,11 @@ body {
       padding: 5px;
       border-radius: 50%;
       margin-bottom: 5px;
-      transition: linear transform .5s; }
+      transition: linear transform .25s; }
       .dots a.active, .dots a:hover {
-        transform: scale(1.8); } }
+        transform: scale(1.8); }
+    .dots.blackout a {
+      background-color: #797979; } }
 
 /*=============================================
   Hero

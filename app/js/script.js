@@ -1,65 +1,91 @@
+(() => {
+  /* Featured products
+  =============================================*/
 
-/* Featured products
-=============================================*/
+  const glideCarousel = new Glide('.featured-products .container', {
+    type: 'carousel'
+  }).mount();
 
-const glideCarousel = new Glide('.featured-products .container', {
-  type: 'carousel'
-}).mount();
+  // Change number active slide on Carousel change
+  let numberActiveSlide = document.querySelector('.featured-products .number span');
+  glideCarousel.on(['run'], () => numberActiveSlide.innerHTML = glideCarousel.index + 1 );
 
-// Change number active slide on Carousel change
-let numberActiveSlide = document.querySelector('.featured-products .number span');
-glideCarousel.on(['run'], () => numberActiveSlide.innerHTML = glideCarousel.index + 1 );
+})();
 
-/* Scroll
-=============================================*/
+(() => {
+  /* Scroll
+  =============================================*/
 
-/*----------  Click to dot  ----------*/
+  /*----------  Click to dot  ----------*/
 
-let dotsToScroll = document.querySelectorAll('.dots a');
+  let dots_container = document.querySelector('.dots'),
+      dots = dots_container.querySelectorAll('a'),
+      dotScroll = false;
 
-function changeDotClass (item) {
-	dotsToScroll.forEach(el => el.classList.remove('active'));
-	item.classList.add('active');		
-}
+  function changeDotClass (item) {
+  	dots.forEach(el => el.classList.remove('active'));
+  	item.classList.add('active');		
+  }
 
-function clickDotToScroll (e) {
-	e.preventDefault();
+  function clickDotToScroll (e) {
+  	e.preventDefault();
+  	changeDotClass(this);
+  	const blockID = this.getAttribute('href').substr(1);
 
-	changeDotClass(this);
+    dotScroll = true;
 
-	const blockID = this.getAttribute('href').substr(1);
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
 
-  document.getElementById(blockID).scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
+    dotScroll = false;
+  }
 
-for (var i = 0; i < dotsToScroll.length; i++) {
-	dotsToScroll[i].addEventListener('click', clickDotToScroll);
-}	
+  dots.forEach(el => el.addEventListener('click', clickDotToScroll));
 
-/*----------  Auto dot change  ----------*/
+  /*----------  Auto dot change  ----------*/
 
-let sections = document.querySelectorAll('.section'),
-		navigationDots = document.querySelectorAll('.dots a');
+  let sections = document.querySelectorAll('.section');
 
-updateNavigation();
-window.addEventListener('scroll', updateNavigation);
+  updateNavigation();
+  window.addEventListener('scroll', updateNavigation);
 
-function updateNavigation() {
-	sections.forEach(el => {
-		let navDot = document.querySelector('.dots a[href="#' + el.getAttribute('id') + '"]'),
-				activeSection = navDot.dataset.number - 1;
+  function updateNavigation() {
+    if (!dotScroll) {
+      let activeIndex = 0;
 
-    if ( ( el.offsetTop - el.offsetHeight / 2 < window.pageYOffset ) && ( el.offsetTop + el.offsetHeight / 2 > window.pageYOffset ) ) {
-      navigationDots[activeSection].classList.add('active');
-      // console.log('TRUE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
-    } else {
-        navigationDots[activeSection].classList.remove('active');
-        // console.log('FALSE ' + (el.offsetTop - el.offsetHeight / 2 + ' < ' + window.pageYOffset + ' && ' + el.offsetTop + el.offsetHeight / 2 + ' > ' + window.pageYOffset));
+    	sections.forEach((el, index) => {
+        if (el.offsetTop < window.pageYOffset + el.offsetHeight / 2) {
+          activeIndex = index;
+        }
+      });
+
+      if (document.querySelector('body').clientHeight - window.innerHeight == window.pageYOffset) {
+        activeIndex = dots.length - 1;
+      }
+
+      if (!dots[activeIndex].classList.contains('active')) {
+        if (document.querySelector('.dots a.active')) {
+          document.querySelector('.dots a.active').classList.remove('active');
+        }
+
+        dots[activeIndex].classList.add('active');
+      }
+
+      /*----------  Change background dots  ----------*/
+
+      let product_review = document.querySelector('#product-review'),
+          dotsTop = dots_container.offsetTop + dots_container.offsetHeight / 2,
+          dotsBottom = dots_container.offsetTop - dots_container.offsetHeight / 2;
+
+
+      if ( (window.pageYOffset + dotsTop) > product_review.offsetTop && 
+           (window.pageYOffset + dotsBottom) < (product_review.offsetTop + product_review.offsetHeight) ) {
+        document.querySelector('.dots').classList.add('blackout');
+      } else {
+          document.querySelector('.dots').classList.remove('blackout');
+      }
     }
-  });
-
-  // console.log('');
-}
+  }
+})();
